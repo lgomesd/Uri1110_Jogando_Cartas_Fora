@@ -27,28 +27,24 @@ public class Main {
         Integer aux;
         System.out.println(cartas);
         
-        //System.out.print("Vetor de cartas: ");
+        System.out.print("Vetor de cartas: ");
         for(int i = 0;i<vetorCartas.length;i++){
             vetorCartas[i] = rng.nextInt(10);
-            //System.out.print(vetorCartas[i] + ", ");
+            System.out.print(vetorCartas[i] + ", ");
         }
         System.out.println("\n");
         for(int i = vetorCartas.length-1;i > 0;i--){
             vetorDescarte[contador] = vetorCartas[i];
             //vetorCartas[i]=null;
             aux = vetorCartas[i-1];
-            for(int x = uPosicao;x>1;x--){
-                
-                vetorCartas[x-1] = vetorCartas[x-2];
-                
+            for(int x = uPosicao;x>1;x--){                
+                vetorCartas[x-1] = vetorCartas[x-2];                
                 //System.out.println(vetorCartas[i]);
             }
             vetorCartas[0] = vetorCartas[aux];
             //System.out.println(vetorCartas[i]);
             uPosicao--;
-            contador++;
-            
-               
+            contador++;                        
         }
         System.out.print("Discarded cards: ");
         for(int i = 0;i<vetorDescarte.length;i++){
