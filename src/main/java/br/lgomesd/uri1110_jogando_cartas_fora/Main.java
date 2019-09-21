@@ -1,47 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.lgomesd.uri1110_jogando_cartas_fora;
-
 import java.util.Scanner;
-
-
-/**
- *
- * @author leonardogd
- */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        
         Scanner ler = new Scanner(System.in);
-        Integer cartas;
-        
-        
-        do{
+        int cartas;
+        while(true){
             cartas = ler.nextInt();
             if(cartas>0){
             Integer vetorCartas[] = new Integer[cartas];
             Integer vetorDescarte[] = new Integer[cartas-1];
             Integer uPosicao = cartas-1;
-        
             Integer contador = 0;
-
             Integer aux;
-            //System.out.println(cartas);
-
-            //System.out.print("Vetor de cartas: ");
             for(int i = cartas-1;i>=0;i--){
                     vetorCartas[i] = contador+1;
                     contador++;
-               // System.out.print(vetorCartas[i] + ", ");
             }
-            //System.out.println("\n");
             contador = 0;
             for(int i = vetorCartas.length-1;i > 0;i--){
                 vetorDescarte[contador] = vetorCartas[i];
@@ -61,9 +35,11 @@ public class Main {
                     System.out.print(vetorDescarte[i]);              
             }
             System.out.print("\n");
-            System.out.print("Remaining card: " + vetorCartas[0]);
+            System.out.println("Remaining card: " + vetorCartas[0]);
             }
-        }while(cartas != 0);
+            else
+                break;
+        }
     }
     
 }
